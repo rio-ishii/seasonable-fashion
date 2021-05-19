@@ -12,7 +12,9 @@ class TrustProxies extends Middleware
      *
      * @var array|string
      */
-    protected $proxies;
+     /*全プロキシを信用 → 記述したコードに問題なくてもさまざまなエラーや不具合を発生することがあるため、その対策
+       プロキシとはサーバやコンピュータが接続されているネットワークから外部へ通信を行う際に、その通信を中継する機能のこと*/
+    protected $proxies = '*';
 
     /**
      * The headers that should be used to detect proxies.

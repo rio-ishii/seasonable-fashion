@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        \URL::forceScheme('https');
+        //この設定を行うことで、Laravelの機能で自動生成されるリンクのURLがhttpsになる
     }
 }
