@@ -7,39 +7,36 @@
 
     <div class="row">
         <div class="col-sm-6 offset-sm-3">
+            
+            {{-- ログインページへのリンク --}}
+            <p class="mt-2">{!! link_to_route('login', 'すでにアカウントをお持ちの方') !!}</p>
 
             {!! Form::open(['route' => 'signup.post']) !!}
                 <div class="form-group">
-                    {!! Form::label('name', 'Name') !!}
+                    {!! Form::label('name', '名前') !!}
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
                 </div>
                 
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio1" id="radio1a" checked>
-                    <label class="form-check-label" for="radio1a">男性</label>
-                </div>
-                
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio2" id="radio1b">
-                    <label class="form-check-label" for="radio1b">女性</label>
-                </div>
+                 {!! Form::label('gender', '性別') !!}
+                <input type="radio" name="gender" value="1" /> 男　
+                <input type="radio" name="gender" value="2" /> 女
 
                 <div class="form-group">
-                    {!! Form::label('email', 'Email') !!}
+                    {!! Form::label('email', 'メールアドレス') !!}
                     {!! Form::email('email', null, ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password', 'Password') !!}
+                    {!! Form::label('password', 'パスワード') !!}
                     {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password_confirmation', 'Confirmation') !!}
+                    {!! Form::label('password_confirmation', 'パスワード確認') !!}
                     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                 </div>
 
-                {!! Form::submit('Sign up', ['class' => 'btn btn-primary btn-block']) !!}
+                {!! Form::submit('登録', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
         </div>
     </div>

@@ -14,7 +14,7 @@ class AddColumnToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->tinyInteger('gender')->unsigned()->comment('性別 1:男、2:女');
+            $table->unsignedTinyInteger('gender')->comment('性別 1:男、2:女');
             //
         });
     }

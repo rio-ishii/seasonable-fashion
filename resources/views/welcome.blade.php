@@ -9,7 +9,6 @@
                         <h3 class="card-title">{{ Auth::user()->name }}</h3>
                     </div>
                     <div class="card-body">
-                        {{-- 認証済みユーザのメールアドレスをもとにGravatarを取得して表示 --}}
                         <img class="rounded img-fluid" src="" alt="">
                     </div>
                 </div>
@@ -25,6 +24,8 @@
                 <h1>Seasonable-fashion</h1>
                 {{-- ユーザ登録ページへのリンク --}}
                 {!! link_to_route('signup.get', 'アカウント登録', [], ['class' => 'btn btn-lg btn-primary']) !!}
+                {{-- ログインページへのリンク --}}
+                {!! link_to_route('login', 'ログイン', [], ['class' => 'btn btn-lg btn-primary']) !!}
             </div>
         </div>
     @endif

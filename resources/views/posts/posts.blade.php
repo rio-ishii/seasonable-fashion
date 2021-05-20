@@ -2,10 +2,7 @@
     <ul class="list-unstyled">
         @foreach ($posts as $post)
             <li class="media mb-3">
-                {{-- 投稿の所有者のメールアドレスをもとにGravatarを取得して表示 --}}
-                <img class="mr-2 rounded" src="" alt="">
-                <div class="media-body">
-                    <div>
+                  　<div>
                         {{-- 投稿の所有者のユーザ詳細ページへのリンク --}}
                         {!! link_to_route('users.show', $post->user->name, ['user' => $post->user->id]) !!}
                         <span class="text-muted">posted at {{ $post->created_at }}</span>
