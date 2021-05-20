@@ -16,12 +16,19 @@
         <div class="col-sm-8">
             <ul class="nav nav-tabs nav-justified mb-3">
                 {{-- ユーザ詳細タブ --}}
-                <li class="nav-item"><a href="#" class="nav-link">TimeLine</a></li>
+                <li class="nav-item">
+                    <a href="{{ route('users.show', ['user' => $user->id]) }}" class="nav-link {{ Request::routeIs('users.show') ? 'active' : '' }}">
+                        タイムライン
+                        <span class="badge badge-secondary">{{ $user->posts_count }}</span>
+                    </a>
+                </li>
                 {{-- フォロー一覧タブ --}}
                 <li class="nav-item"><a href="#" class="nav-link">Followings</a></li>
                 {{-- フォロワー一覧タブ --}}
                 <li class="nav-item"><a href="#" class="nav-link">Followers</a></li>
             </ul>
+            {{-- 投稿一覧 --}}
+            @include('posts.posts')
         </div>
     </div>
 @endsection
