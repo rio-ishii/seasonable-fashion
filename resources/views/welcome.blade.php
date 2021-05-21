@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div>
-                     @include('posts.create')
+                    @include('posts.create')
                 </div>
             </aside>
             <div class="col-sm-8">

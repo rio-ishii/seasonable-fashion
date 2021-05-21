@@ -72,7 +72,9 @@ class PostsController extends Controller
 
         // 認証済みユーザ（閲覧者）の投稿として作成（リクエストされた値をもとに作成）
         $request->user()->posts()->create([
+            'image_path' => $request->image_path,
             'content' => $request->content,
+            'temperature' => $request->temperature,
         ]);
 
         // 前のURLへリダイレクトさせる
