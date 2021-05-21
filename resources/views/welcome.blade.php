@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div>
-                     {!! link_to_route('posts.create','新規投稿', [], ['class' => 'btn btn-primary btn-block']) !!}
+                     @include('posts.create')
                 </div>
             </aside>
             <div class="col-sm-8">

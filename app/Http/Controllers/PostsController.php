@@ -51,14 +51,15 @@ class PostsController extends Controller
       $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
       // アップロードした画像のフルパスを取得
       $post->image_path = Storage::disk('s3')->url($path);
-
+      $post->content = "a";
+      $post->user_id = \Auth::user()->id;
       $post->save();
       
-      //return view('posts.create',[
-            //'post' => $post,
-           // ]);
+      return view('posts.create',[
+            'post' => $post,
+            ]);
 
-      return redirect('posts/create');
+      //return redirect('posts/create');
       
    }
     
