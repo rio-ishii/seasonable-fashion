@@ -11,14 +11,6 @@
                         {{-- 投稿内容 --}}
                         <p class="mb-0">{!! nl2br(e($post->content)) !!}</p>
                     </div>
-                    <div>
-                        @if (Auth::id() == $post->user_id)
-                            {{-- 投稿削除ボタンのフォーム --}}
-                            {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
-                                {!! Form::submit('この投稿を削除する', ['class' => 'btn btn-danger btn-sm']) !!}
-                            {!! Form::close() !!}
-                        @endif
-                    </div>
                 </div>
             </li>
         @endforeach

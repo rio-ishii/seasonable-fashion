@@ -17,17 +17,22 @@
                 {{-- ユーザ詳細タブ --}}
                 <li class="nav-item">
                     <a href="{{ route('users.show', ['user' => $user->id]) }}" class="nav-link {{ Request::routeIs('users.show') ? 'active' : '' }}">
-                        タイムライン
-                        <span class="badge badge-secondary">{{ $user->posts_count }}</span>
+                        投稿一覧
                     </a>
                 </li>
-                {{-- フォロー一覧タブ --}}
-                <li class="nav-item"><a href="#" class="nav-link">Followings</a></li>
-                {{-- フォロワー一覧タブ --}}
-                <li class="nav-item"><a href="#" class="nav-link">Followers</a></li>
+                {{--<li class="nav-item">
+                    <a href="{{ route('users.show', ['user' => $user->id]) }}" class="nav-link {{ Request::routeIs('users.show') ? 'active' : '' }}">
+                        いいね一覧
+                    </a>
+                </li>--}}
             </ul>
-            {{-- 投稿一覧 --}}
-            @include('posts.posts')
+            @if (count($posts) > 0)
+                {{-- 投稿一覧 --}}
+                @include('posts.posts')
+            @else
+                <p>まだ投稿がありません</p>
+                {!! link_to_route('posts.create','コーディネートを投稿してみる', [], ['class' => 'btn btn-primary']) !!}
+            @endif
         </div>
     </div>
 @endsection

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Post;
+
+use Storage;
+
 class PostsController extends Controller
 {
     
@@ -50,11 +54,11 @@ class PostsController extends Controller
 
       $post->save();
       
-      return view('posts.create',[
-            'post' => $post,
-            ]);
+      //return view('posts.create',[
+            //'post' => $post,
+           // ]);
 
-      //return redirect('posts\create');
+      return redirect('posts/create');
       
    }
     
@@ -77,7 +81,7 @@ class PostsController extends Controller
     public function destroy($id)
     {
         // idの値で投稿を検索して取得
-        $post = \App\Micropost::findOrFail($id);
+        $post = \App\Post::findOrFail($id);
 
         // 認証済みユーザ（閲覧者）がその投稿の所有者である場合は、投稿を削除
         if (\Auth::id() === $post->user_id) {
