@@ -8,8 +8,7 @@
                     <h3 class="card-title">{{ $user->name }}</h3>
                 </div>
                 <div class="card-body">
-                    {{-- ユーザのメールアドレスをもとにGravatarを取得して表示 --}}
-                    <img class="rounded img-fluid" src="" alt="">
+                    <img class="rounded img-fluid"  alt="">
                 </div>
             </div>
         </aside>

@@ -6,30 +6,9 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    public function add()
-  {
-      return view('posts.create');
-  }
-
-  public function create(Request $request)
-  {
-      $post = new Post;
-      $form = $request->all();
-
-      //s3アップロード開始
-      $image = $request->file('image');
-      // バケットの`myprefix`フォルダへアップロード
-      $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
-      // アップロードした画像のフルパスを取得
-      $post->image_path = Storage::disk('s3')->url($path);
-
-      $post->save();
-
-      return redirect('posts/create');
-    }
-  
+    
     public function index(Request $request)
-    {
+   {
     //$posts = Post::all();
 
     //return view('posts.index', ['posts' => $posts]);
@@ -51,6 +30,33 @@ class PostsController extends Controller
             // Welcomeビューでそれらを表示
             return view('welcome', $data);
     }//
+    
+    public function add()
+  {
+      return view('posts.create');
+  }
+
+    public function create(Request $request)
+  {
+      $post = new Post;
+      $form = $request->all();
+
+      //s3アップロード開始
+      $image = $request->file('image');
+      // バケットの`myprefix`フォルダへアップロード
+      $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
+      // アップロードした画像のフルパスを取得
+      $post->image_path = Storage::disk('s3')->url($path);
+
+      $post->save();
+      
+      return view('posts.create',[
+            'post' => $post,
+            ]);
+
+      //return redirect('posts\create');
+      
+   }
     
     public function store(Request $request)
     {

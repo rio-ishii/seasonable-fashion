@@ -28,6 +28,6 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 Route::group(['middleware' => ['auth']], function () {
     // 中略
-    Route::resource('posts', 'PostsController', ['only' => ['store', 'destroy']]);
+    Route::resource('posts', 'PostsController', ['only' => ['create', 'store', 'destroy']]);
 });
 

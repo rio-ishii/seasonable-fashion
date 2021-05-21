@@ -9,13 +9,20 @@
                         <h3 class="card-title">{{ Auth::user()->name }}</h3>
                     </div>
                     <div class="card-body">
-                        <img class="rounded img-fluid" src="" alt="">
+                        <img class="rounded img-fluid" alt="">
                     </div>
+                </div>
+                <div>
+                     {!! link_to_route('posts.create','新規投稿', [], ['class' => 'btn btn-primary btn-block']) !!}
                 </div>
             </aside>
             <div class="col-sm-8">
-                {{-- 投稿一覧 --}}
-                @include('posts.posts')
+                @if (count($posts) > 0)
+                    {{-- 投稿一覧 --}}
+                    @include('posts.posts')
+                @else
+                    <p>まだ表示できる投稿がありません</p>
+                @endif
             </div>
         </div>
     @else
