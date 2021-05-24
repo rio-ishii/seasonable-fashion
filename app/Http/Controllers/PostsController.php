@@ -86,6 +86,42 @@ class PostsController extends Controller
         return back();
     }
     
+    public function detail()
+    {
+        return view('posts.edit');
+    } 
+    
+    public function edit($id)
+    {
+        $post = Post::findOrFail($id);
+        
+        if (\Auth::id() === $post->user_id) {
+
+       
+        return view('posts.edit', [
+            'post' => $post,
+        ]);
+    }
+        return redirect ('/');
+    }
+    
+    public function update(Request $request, $id)
+    {
+            
+         //バリデーション
+        $request->validate([
+            'content' => 'required|max:255',
+        ]);
+        $post = Post::findOrFail($id);
+        
+        if (\Auth::id() === $task->user_id) {
+        
+        $post->content = $request->content;
+        $post->save();
+    }
+
+        return redirect('/');
+    }
     
     
     public function destroy($id)
