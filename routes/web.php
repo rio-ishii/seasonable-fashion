@@ -12,7 +12,7 @@
 */
 Route::get('/', 'PostsController@index');
 
-Route::get('/posts/create', 'PostsController@show')->name('newpost.get');
+Route::get('/posts/create', 'PostsController@showButton')->name('newpost.get');
 Route::post('/posts/create', 'PostsController@create');
 
 Route::resource('users', 'UsersController');

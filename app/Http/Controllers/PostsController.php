@@ -62,14 +62,14 @@ class PostsController extends Controller
 
    }
      
-    public function show()
+    public function showButton()
     {
         return view('posts.create');
     } 
      
     public function store(Request $request)
     {
-        // バリデーション
+         //バリデーション
         $request->validate([
             'content' => 'required|max:255',
         ]);
@@ -80,10 +80,12 @@ class PostsController extends Controller
             'content' => $request->content,
             'temperature' => $request->temperature,
         ]);
+        
 
         // 前のURLへリダイレクトさせる
         return back();
     }
+    
     
     
     public function destroy($id)

@@ -11,7 +11,6 @@
                         {{-- 投稿内容 --}}
                         <p class="mb-0">{!! nl2br(e($post->content)) !!}</p>
                     </div>
-                </div>
             </li>
         @endforeach
     </ul>
