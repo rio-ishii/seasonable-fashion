@@ -11,14 +11,14 @@
 |
 */
 Route::get('/', 'PostsController@index');
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
+
+//Route::get('/posts/create', 'PostsController@create')->name('newpost.get');
+Route::post('/posts/create', 'PostsController@create');
 
 Route::resource('users', 'UsersController');
 
-Route::get('/posts/create', 'PostsController@create')->name('posts.create.get');
-Route::put('/posts/create', 'PostsController@create')->name('posts.create.post');
+
+
 
 // ユーザ登録
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');

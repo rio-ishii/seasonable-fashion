@@ -52,16 +52,18 @@ class PostsController extends Controller
       // アップロードした画像のフルパスを取得
       $post->image_path = Storage::disk('s3')->url($path);
       $post->content = "a";
+      $post->temperature = 22;
       $post->user_id = \Auth::user()->id;
       $post->save();
       
-      return view('posts.create',[
-            'post' => $post,
-            ]);
+       //   /mypage へルーティングしているメソッドまで遷移する
+      //   web.php の定義より、PostsController@show に遷移する
+      return redirect()->route('users.show', ['user' => \Auth::user()]);
 
-      //return redirect('posts/create');
+      
       
    }
+     
     
     public function store(Request $request)
     {

@@ -1,4 +1,5 @@
-<form route=('posts.create.post') method="post" enctype="multipart/form-data">
+
+  <form action="{{ action('PostsController@create') }}" method="post" enctype="multipart/form-data">
     <!-- アップロードフォームの作成 -->
     <input type="file" name="image"><br>
     説明<br>
@@ -135,6 +136,8 @@
   　<br>
   　
     {{ csrf_field() }}
-    @method("PUT")
+    
     <input type="submit" value="投稿する">
   </form>
+  
+

@@ -14,6 +14,7 @@
                 </div>
                 <div>
                     @include('posts.create')
+                    {{--{!! link_to_route('newpost.get', '新規投稿', [], ['class' => 'btn btn-lg btn-primary']) !!}--}}
                 </div>
             </aside>
             <div class="col-sm-8">
