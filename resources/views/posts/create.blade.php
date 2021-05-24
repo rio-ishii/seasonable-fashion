@@ -1,4 +1,6 @@
+@extends('layouts.app')
 
+@section('content')
   <form action="{{ action('PostsController@create') }}" method="post" enctype="multipart/form-data">
     <!-- アップロードフォームの作成 -->
     <input type="file" name="image"><br>
@@ -140,4 +142,4 @@
     <input type="submit" value="投稿する">
   </form>
   
-
+@endsection

@@ -55,16 +55,18 @@ class PostsController extends Controller
       $post->temperature = 22;
       $post->user_id = \Auth::user()->id;
       $post->save();
-      
+            
        //   /mypage へルーティングしているメソッドまで遷移する
       //   web.php の定義より、PostsController@show に遷移する
       return redirect()->route('users.show', ['user' => \Auth::user()]);
 
-      
-      
    }
      
-    
+    public function show()
+    {
+        return view('posts.create');
+    } 
+     
     public function store(Request $request)
     {
         // バリデーション
@@ -82,6 +84,7 @@ class PostsController extends Controller
         // 前のURLへリダイレクトさせる
         return back();
     }
+    
     
     public function destroy($id)
     {
