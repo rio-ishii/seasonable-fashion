@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div>
-                    {!! link_to_route('newpost.get', '新規投稿', [], ['class' => 'btn btn-lg btn-primary']) !!}
+                    {!! link_to_route('newpost.get', '新規投稿', [], ['class' => 'btn btn-lg btn-info']) !!}
                 </div>
             </aside>
             <div class="col-sm-8">

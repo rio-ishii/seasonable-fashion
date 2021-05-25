@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div>
-                {!! link_to_route('newpost.get', '新規投稿', [], ['class' => 'btn btn-lg btn-primary']) !!}
+                {!! link_to_route('newpost.get', '新規投稿', [], ['class' => 'btn btn-lg btn-info']) !!}
             </div>
         </aside>
         <div class="col-sm-8">
@@ -34,7 +34,7 @@
                 @include('posts.posts')
             @else
                 <p>まだ投稿がありません</p>
-                {!! link_to_route('newpost.get','コーディネートを投稿してみる', [], ['class' => 'btn btn-primary']) !!}
+                {!! link_to_route('newpost.get','コーディネートを投稿してみる', [], ['class' => 'btn btn-info']) !!}
             @endif
         </div>
     </div>
