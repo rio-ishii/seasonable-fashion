@@ -114,7 +114,7 @@ class PostsController extends Controller
         ]);
         $post = Post::findOrFail($id);
         
-        if (\Auth::id() === $task->user_id) {
+        if (\Auth::id() === $post->user_id) {
         
         $post->content = $request->content;
         $post->save();

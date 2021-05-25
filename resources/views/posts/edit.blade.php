@@ -14,17 +14,17 @@
 
     <div class="row">
         <div class="col-6">
-            {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'put']) !!}
+            <form action="{{ action('PostsController@update') }}" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
-                    {!! Form::label('content', 'コメント:') !!}
+                    {!! Form::label('content', '説明') !!}
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}
                 </div>
 
-                
-                {!! Form::submit('更新', ['class' => 'btn btn-primary']) !!}
+                {{ csrf_field() }}
+                <input type="submit" value="更新する">
+            </form>
 
-            {!! Form::close() !!}
         </div>
     </div>
 
