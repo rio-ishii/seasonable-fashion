@@ -15,7 +15,7 @@
                         <p class="mb-0">{!! nl2br(e($post->lowTemperature)) !!}度</p>
                     
                         {!! link_to_route('posts.detail', '編集する', ['post' => $post->id], ['class' => 'btn btn-light']) !!}
-                        <br>
+            
                         {!! Form::model($post, ['route' => ['posts.delete', $post->id], 'method' => 'delete']) !!}
                             {!! Form::submit('削除する', ['class' => 'btn btn-light']) !!}
                         {!! Form::close() !!}
