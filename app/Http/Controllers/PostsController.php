@@ -117,7 +117,7 @@ class PostsController extends Controller
         
         if (\Auth::id() === $post->user_id) {
         
-        $post->content = $form['comment'];
+        $post->content = $request->content;
         $post->save();
     }
 
