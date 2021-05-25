@@ -15,11 +15,11 @@
     <div class="row">
         <div class="col-6">
             <form action="{{ action('PostsController@update') }}" method="post" enctype="multipart/form-data">
-
-                <div class="form-group">
-                    {!! Form::label('content', '説明') !!}
-                    {!! Form::text('content', null, ['class' => 'form-control']) !!}
-                </div>
+                
+                説明<br>
+                <textarea name = "comment" rows = "4" cols = "40">
+                </textarea>
+                <br>
 
                 {{ csrf_field() }}
                 <input type="submit" value="更新する">

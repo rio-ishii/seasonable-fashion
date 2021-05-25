@@ -44,16 +44,15 @@ class PostsController extends Controller
   {
       $post = new Post;
       $form = $request->all();
-
       //s3アップロード開始
       $image = $request->file('image');
       // バケットの`myprefix`フォルダへアップロード
       $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
       // アップロードした画像のフルパスを取得
       $post->image_path = Storage::disk('s3')->url($path);
-      $post->content = $request->content;
-      $post->highTemperature = $request->highTemperature;
-      $post->lowTemperature = $request->lowTemperature;
+      $post->content = $form['comment'];
+      $post->highTemperature = $form['highest_temperature'];
+      $post->lowTemperature = $form['lowest_temperature'];
       $post->user_id = \Auth::user()->id;
       $post->save();
             
@@ -118,7 +117,7 @@ class PostsController extends Controller
         
         if (\Auth::id() === $post->user_id) {
         
-        $post->content = $request->content;
+        $post->content = $form['comment'];
         $post->save();
     }
 

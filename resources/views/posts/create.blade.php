@@ -4,10 +4,12 @@
   <form action="{{ action('PostsController@create') }}" method="post" enctype="multipart/form-data">
     <!-- アップロードフォームの作成 -->
     <input type="file" name="image"><br>
+    
     説明<br>
     <textarea name = "comment" rows = "4" cols = "40">
     
-    </textarea><br>
+    </textarea>
+    <br>
     
     最高気温
   　<select name = "highest temperature">

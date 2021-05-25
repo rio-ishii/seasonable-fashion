@@ -11,10 +11,10 @@
                         {{-- 投稿内容 --}}
                         <img src="{{ $post->image_path }}" class="img-fluid" alt="Responsive image">
                         <p class="mb-0">{!! nl2br(e($post->content)) !!}</p>
-                        <p class="mb-0">{!! nl2br(e($post->highTemperature)) !!}</p>
-                        <p class="mb-0">{!! nl2br(e($post->lowTemperature)) !!}</p>
+                        <p class="mb-0">{!! nl2br(e($post->highTemperature)) !!}度</p>
+                        <p class="mb-0">{!! nl2br(e($post->lowTemperature)) !!}度</p>
                     
-                        {!! link_to_route('posts.detail', '詳しく見る', ['post' => $post->id], ['class' => 'btn btn-light']) !!}
+                        {!! link_to_route('posts.detail', '編集する', ['post' => $post->id], ['class' => 'btn btn-light']) !!}
                     </div>
             </li>
         @endforeach
