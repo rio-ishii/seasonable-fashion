@@ -31,7 +31,7 @@
                 @include('posts.posts')
             @else
                 <p>まだ投稿がありません</p>
-                {!! link_to_route('posts.create','コーディネートを投稿してみる', [], ['class' => 'btn btn-primary']) !!}
+                {!! link_to_route('newpost.get','コーディネートを投稿してみる', [], ['class' => 'btn btn-primary']) !!}
             @endif
         </div>
     </div>

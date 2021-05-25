@@ -14,7 +14,8 @@ class AddColumnToPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->bigInteger('temperature');
+            $table->bigInteger('highTemperature');
+            $table->bigInteger('lowTemperature');
             //
         });
     }

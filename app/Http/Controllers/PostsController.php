@@ -51,8 +51,9 @@ class PostsController extends Controller
       $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
       // アップロードした画像のフルパスを取得
       $post->image_path = Storage::disk('s3')->url($path);
-      $post->content = "a";
-      $post->temperature = 22;
+      $post->content = $request->content;
+      $post->highTemperature = $request->highTemperature;
+      $post->lowTemperature = $request->lowTemperature;
       $post->user_id = \Auth::user()->id;
       $post->save();
             
@@ -78,7 +79,8 @@ class PostsController extends Controller
         $request->user()->posts()->create([
             'image_path' => $request->image_path,
             'content' => $request->content,
-            'temperature' => $request->temperature,
+            'highTemperature' => $request->highTemperature,
+            'lowTemperature' => $request->lowTemperature,
         ]);
         
 
