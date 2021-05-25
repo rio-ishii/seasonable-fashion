@@ -11,6 +11,7 @@
                         {{-- 投稿内容 --}}
                         <img src="{{ $post->image_path }}" />
                         <p class="mb-0">{!! nl2br(e($post->content)) !!}</p>
+                        <p class="mb-0">{!! nl2br(e($post->temperature)) !!}度</p>
                     </div>
                     <div>
                         {!! link_to_route('posts.detail', '詳しく見る', ['post' => $post->id], ['class' => 'btn btn-light']) !!}
