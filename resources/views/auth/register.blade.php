@@ -9,7 +9,7 @@
         <div class="col-sm-6 offset-sm-3">
             
             {{-- ログインページへのリンク --}}
-            <p class="mt-2">{!! link_to_route('login', 'すでにアカウントをお持ちの方') !!}</p>
+            <p class="mt-2 text-center">{!! link_to_route('login', 'すでにアカウントをお持ちの方') !!}</p>
 
             {!! Form::open(['route' => 'signup.post']) !!}
                 <div class="form-group">

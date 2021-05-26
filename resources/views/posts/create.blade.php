@@ -1,14 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-  <form action="{{ action('PostsController@create') }}" method="post" enctype="multipart/form-data">
+  <form action="{{ action('PostsController@create') }}" method="post" enctype="multipart/form-data" style="padding-top: 5rem">
     <!-- アップロードフォームの作成 -->
-    <input type="file" name="image"><br>
+    <input type="file" name="image"><br><br>
     
     説明<br>
     <textarea name = "comment" rows = "4" cols = "40">
     
     </textarea>
+    <br>
+    
+    天気
+    <select name = "weather">
+      <option value="">-</option>
+      <option value="晴れ">晴れ</option>
+      <option value="曇り">曇り</option>
+      <option value="雨">雨</option>
+      <option value="雪">雪</option>
+    </select>
     <br>
     
     最高気温
@@ -70,7 +80,7 @@
   　</select>度
   　<br>
   　
-  　最低気温
+  最低気温
   　<select name = "lowest temperature">
   　   <option value="">-</option>
   　   <option value="-30">-30</option>

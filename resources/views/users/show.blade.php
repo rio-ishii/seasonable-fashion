@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
+    <div class="row" style="padding-top: 5rem">
         <aside class="col-sm-4">
             <div class="card">
                 <div class="card-header">

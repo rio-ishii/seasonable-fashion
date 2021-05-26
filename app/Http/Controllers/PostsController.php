@@ -53,6 +53,7 @@ class PostsController extends Controller
       $post->content = $form['comment'];
       $post->highTemperature = $form['highest_temperature'];
       $post->lowTemperature = $form['lowest_temperature'];
+      $post->weather =$form['weather'];
       $post->user_id = \Auth::user()->id;
       $post->save();
             
