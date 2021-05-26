@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div>
-                    {!! link_to_route('newpost.get', '新規投稿', [], ['class' => 'btn btn-lg btn-info']) !!}
+                    {!! link_to_route('newpost.get', '新規投稿', [], ['class' => 'btn btn-lg btn-dark']) !!}
                 </div>
             </aside>
             <div class="col-sm-8">
@@ -30,9 +30,9 @@
             <div class="text-center">
                 <h1>Seasonable-fashion</h1>
                 {{-- ユーザ登録ページへのリンク --}}
-                {!! link_to_route('signup.get', 'アカウント登録', [], ['class' => 'btn btn-lg btn-primary']) !!}
+                {!! link_to_route('signup.get', 'アカウント登録', [], ['class' => 'btn btn-lg btn-dark']) !!}
                 {{-- ログインページへのリンク --}}
-                {!! link_to_route('login', 'ログイン', [], ['class' => 'btn btn-lg btn-primary']) !!}
+                {!! link_to_route('login', 'ログイン', [], ['class' => 'btn btn-lg btn-dark']) !!}
             </div>
         </div>
     @endif
