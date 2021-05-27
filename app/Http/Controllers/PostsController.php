@@ -44,7 +44,7 @@ class PostsController extends Controller
   {
       $post = new Post;
       $form = $request->all();
-      //s3アップロード開始
+      // s3アップロード開始
       $image = $request->file('image');
       // バケットの`myprefix`フォルダへアップロード
       $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
