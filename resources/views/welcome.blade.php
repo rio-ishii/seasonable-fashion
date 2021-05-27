@@ -3,20 +3,6 @@
 @section('content')
    @if (Auth::check())
         <div class="row" style="padding-top: 5rem">
-            {{--<aside class="col-sm-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">{{ Auth::user()->name }}</h3>
-                    </div>
-                    <div class="card-body">
-                        <img class="rounded img-fluid" alt="">
-                    </div>
-                </div>
-                <br>
-                <div class="text-center">
-                    {!! link_to_route('newpost.get', '新規投稿', [], ['class' => 'btn btn-lg btn-dark']) !!}
-                </div>
-            </aside>
             <div class="col-sm-8">--}}
                 @if (count($posts) > 0)
                     {{-- 投稿一覧 --}}

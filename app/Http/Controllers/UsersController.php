@@ -38,4 +38,6 @@ class UsersController extends Controller
             'posts' => $posts,
         ]);
     }
+    
+    
 }

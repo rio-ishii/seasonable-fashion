@@ -2,15 +2,13 @@
     <ul class="list-unstyled">
         @foreach ($posts as $post)
             <li class="media mb-3">
-                  　<div>
+                    <p><div class="container-fluid col-sm-6">
                         {{-- 投稿の所有者のユーザ詳細ページへのリンク --}}
-                        {{--{!! link_to_route('users.show', $post->user->name, ['user' => $post->user->id]) !!}--}}
-                    </div>
-                    <div class="container-fluid col-sm-6">
+                        <p>{!! link_to_route('users.show', $post->user->name, ['user' => $post->user->id]) !!}</p>
                         {{-- 投稿内容 --}}
                         <img src="{{ $post->image_path }}" class="img-fluid"><br>
                         <span class="text-muted">{{ $post->created_at }}</span>
-                    </div>
+                    </div></p>
                     <div class="col-sm-6">
                         <h5>Contents</h5>
                         <p class="mb-0">天気： {!! nl2br(e($post->weather)) !!}</p>

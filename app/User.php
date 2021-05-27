@@ -52,29 +52,16 @@ class User extends Authenticatable
     {
         $this->loadCount('posts');
     }
-    
-    /**
-     * このユーザが所有する投稿。（ Micropostモデルとの関係を定義）
-     */
-    public function posts()
+
+    public function feed_posts()
     {
-        return $this->hasMany(Post::class);
+        // このユーザがフォロー中のユーザのidを取得して配列にする
+        $userIds = $this->pluck('users.id')->toArray();
+        // このユーザのidもその配列に追加
+        $userIds[] = $this->id;
+        // それらのユーザが所有する投稿に絞り込む
+        return Post::whereIn('user_id', $userIds);
     }
 
-    /**
-     * このユーザがフォロー中のユーザ。（ Userモデルとの関係を定義）
-     */
-    public function followings()
-    {
-        return $this->belongsToMany(User::class, 'user_follow', 'user_id', 'follow_id')->withTimestamps();
-    }
 
-    /**
-     * このユーザをフォロー中のユーザ。（ Userモデルとの関係を定義）
-     */
-    public function followers()
-    {
-        return $this->belongsToMany(User::class, 'user_follow', 'follow_id', 'user_id')->withTimestamps();
-    }
-    
 }
