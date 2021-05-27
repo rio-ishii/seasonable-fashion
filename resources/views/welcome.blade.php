@@ -3,7 +3,6 @@
 @section('content')
    @if (Auth::check())
         <div class="row" style="padding-top: 5rem">
-            <div class="col-sm-8">--}}
                 @if (count($posts) > 0)
                     {{-- 投稿一覧 --}}
                     @include('posts.posts')
