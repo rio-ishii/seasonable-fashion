@@ -20,6 +20,7 @@
                     </div>
                     <div class="col-sm-1">
                             {{--{!! link_to_route('posts.detail', '編集する', ['post' => $post->id], ['class' => 'btn btn-light']) !!}--}}
+                        <p>@include('favorites.favorite_button')</p>
                         @if (Auth::id() == $user->id)
                             <form action="{{ route('posts.delete',$post->id) }}" method="POST">
                                 @method('DELETE')
