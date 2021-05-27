@@ -81,6 +81,7 @@ class PostsController extends Controller
             'content' => $request->content,
             'highTemperature' => $request->highTemperature,
             'lowTemperature' => $request->lowTemperature,
+            'weather' => $request->weather,
         ]);
         
 
