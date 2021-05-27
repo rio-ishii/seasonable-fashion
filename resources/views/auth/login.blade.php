@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="text-center">
+    <div class="text-center" style="padding-top: 5rem">
         <h1>ログイン</h1>
     </div>
 

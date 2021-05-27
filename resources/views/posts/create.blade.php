@@ -2,16 +2,17 @@
 
 @section('content')
   <form action="{{ action('PostsController@create') }}" method="post" enctype="multipart/form-data" style="padding-top: 5rem">
+    <h4>新規投稿</h4>
     <!-- アップロードフォームの作成 -->
-    <input type="file" name="image"><br><br>
+    <p><input type="file" name="image"></p>
     
-    説明<br>
-    <textarea name = "comment" rows = "4" cols = "40">
+    説明
+    <p><textarea name = "comment" rows = "4" cols = "40">
     
     </textarea>
-    <br>
+    </p>
     
-    天気
+    <p>天気
     <select name = "weather">
       <option value="">-</option>
       <option value="晴れ">晴れ</option>
@@ -19,9 +20,9 @@
       <option value="雨">雨</option>
       <option value="雪">雪</option>
     </select>
-    <br>
+    </p>
     
-    最高気温
+    <p>最高気温
   　<select name = "highest temperature">
       <option value="">-</option>
       <option value="-10">-10</option>
@@ -78,9 +79,9 @@
       <option value="41">41</option>
       <option value="42">42</option>
   　</select>度
-  　<br>
+  　</p>
   　
-  最低気温
+  　<p>最低気温
   　<select name = "lowest temperature">
   　   <option value="">-</option>
   　   <option value="-30">-30</option>
@@ -147,11 +148,11 @@
       <option value="31">31</option>
       <option value="32">32</option>
   　</select>度
-  　<br>
+  　</p>
   　
     {{ csrf_field() }}
     
-    <input type="submit" value="投稿する">
+    <p><input type="submit" value="投稿する"></p>
   </form>
   
 @endsection

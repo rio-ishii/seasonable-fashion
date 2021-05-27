@@ -8,12 +8,15 @@
                     <h3 class="card-title">{{ $user->name }}</h3>
                 </div>
                 <div class="card-body">
-                    <img class="rounded img-fluid"  alt="">
+                    <img class="mr-2 rounded" src="{{ Gravatar::get($user->email, ['size' => 100]) }}" alt="">
                 </div>
             </div>
-            <div>
+            @if (Auth::id() == $user->id)
+            <p><div class="text-center">
                 {!! link_to_route('newpost.get', '新規投稿', [], ['class' => 'btn btn-lg btn-dark']) !!}
             </div>
+            </p>
+            @endif
         </aside>
         <div class="col-sm-8">
             <ul class="nav nav-tabs nav-justified mb-3">
@@ -34,7 +37,9 @@
                 @include('posts.posts')
             @else
                 <p>まだ投稿がありません</p>
+                @if (Auth::id() == $user->id)
                 {!! link_to_route('newpost.get','コーディネートを投稿してみる', [], ['class' => 'btn btn-dark']) !!}
+                @endif
             @endif
         </div>
     </div>

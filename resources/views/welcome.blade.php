@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @if (Auth::check())
+   @if (Auth::check())
         <div class="row" style="padding-top: 5rem">
             {{--<aside class="col-sm-4">
                 <div class="card">
@@ -27,15 +27,15 @@
             </div>
         </div>
     @else
-        <div class="center jumbotron">
+        <div class="center jumbotron" style="padding-top: 5rem">
             <div class="text-center">
                 <h1>Seasonable-fashion</h1>
-                <p>気温と一緒にコーディネートを投稿してみましょう！</p><br>
+                <p>気温と一緒にコーディネートを投稿してみましょう！</p>
                 {{-- ユーザ登録ページへのリンク --}}
-                {!! link_to_route('signup.get', 'アカウント登録', [], ['class' => 'btn btn-lg btn-dark']) !!}
-                <br><br>
+                <p>{!! link_to_route('signup.get', 'アカウント登録', [], ['class' => 'btn btn-lg btn-dark']) !!}</p>
+                
                 {{-- ログインページへのリンク --}}
-                {!! link_to_route('login', 'ログイン', [], ['class' => 'btn btn-lg btn-dark']) !!}
+                <p>{!! link_to_route('login', 'ログイン', [], ['class' => 'btn btn-lg btn-dark']) !!}</p>
             </div>
         </div>
     @endif
