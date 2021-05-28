@@ -15,7 +15,7 @@
         <div class="center jumbotron" style="padding-top: 5rem">
             <div class="text-center">
                 <h1>Seasonable-fashion</h1>
-                <p>気温と一緒にコーディネートを投稿してみましょう！</p>
+                <p>コーディネートを気温から決めてみませんか？</p>
                 {{-- ユーザ登録ページへのリンク --}}
                 <p>{!! link_to_route('signup.get', 'アカウント登録', [], ['class' => 'btn btn-lg btn-dark']) !!}</p>
                 
