@@ -13,16 +13,8 @@
                 @if (Auth::check())
                     <li class="nav-item">{!! link_to_route('newpost.get', '新規投稿', [], ['class' => 'nav-link']) !!}</li>
                     <li class="nav-item">{!! link_to_route('users.index', 'ユーザー', [], ['class' => 'nav-link']) !!}</li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            {{-- ユーザ詳細ページへのリンク --}}
-                            <li class="dropdown-item">{!! link_to_route('users.show', 'マイページ', ['user' => Auth::id()]) !!}</li>
-                            <li class="dropdown-divider"></li>
-                            {{-- ログアウトへのリンク --}}
-                            <li class="dropdown-item">{!! link_to_route('logout.get', 'ログアウト') !!}</li>
-                        </ul>
-                    </li>
+                    <li class="nav-item">{!! link_to_route('users.show', 'マイページ', ['user' => Auth::id()],  ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト', [], ['class' => 'nav-link']) !!}</li>
                 {{--@else
                     {{-- ユーザ登録ページへのリンク --}}
                     {{--<li class="nav-item">{!! link_to_route('signup.get', 'アカウント登録', [], ['class' => 'nav-link']) !!}</li>
