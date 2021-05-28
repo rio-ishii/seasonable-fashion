@@ -7,9 +7,7 @@
     <p><input type="file" name="image"></p>
     
     説明
-    <p><textarea name = "comment" rows = "4" cols = "40">
-    
-    </textarea>
+    <p><textarea name = "comment" rows = "4" cols = "40"></textarea>
     </p>
     
     <p>天気
