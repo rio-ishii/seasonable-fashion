@@ -71,11 +71,11 @@
                             </div>
                         </div>
                     </li>
-                @endforeach
-            </ul>
-            {{-- ページネーションのリンク --}}
-            {{ $favorites ->links() }}
-        @endif
+                    @endforeach
+                </ul>
+                {{-- ページネーションのリンク --}}
+                {{ $favorites ->links() }}
+            @endif
         </div>
     </div>
 @endsection

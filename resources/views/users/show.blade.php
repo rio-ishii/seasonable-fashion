@@ -38,9 +38,9 @@
                 {{-- 投稿一覧 --}}
                 @include('posts.posts')
             @else
-                <p>まだ投稿がありません</p>
+                <p class="text-center">まだ投稿がありません</p>
                 @if (Auth::id() == $user->id)
-                {!! link_to_route('newpost.get','コーディネートを投稿してみる', [], ['class' => 'btn btn-dark']) !!}
+                <p class="text-center">{!! link_to_route('newpost.get','コーディネートを投稿してみる', [], ['class' => 'btn btn-dark']) !!}</p>
                 @endif
             @endif
         </div>
