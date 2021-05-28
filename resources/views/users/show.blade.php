@@ -27,6 +27,12 @@
                         <span class="badge badge-secondary">{{ $user->posts_count }}</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('users.favorites', ['id' => $user->id]) }}" class="nav-link {{ Request::routeIs('users.favorites') ? 'active' : '' }}">
+                        いいね一覧
+                        <span class="badge badge-secondary">{{ $user->favorites_count }}</span>
+                    </a>
+                </li>
             </ul>
             @if (count($posts) > 0)
                 {{-- 投稿一覧 --}}
