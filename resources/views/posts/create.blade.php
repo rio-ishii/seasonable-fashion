@@ -7,12 +7,12 @@
     <p><input type="file" name="image"></p>
     
     説明
-    <p><textarea name = "comment" rows = "4" cols = "40"></textarea>
+    <p><textarea name = "comment" rows = "4" cols = "40" placeholder="入力してください"></textarea>
     </p>
     
     <p>天気
     <select name = "weather">
-      <option value="">-</option>
+      <option hidden>選択してください</option>
       <option value="晴れ">晴れ</option>
       <option value="曇り">曇り</option>
       <option value="雨">雨</option>
@@ -33,7 +33,7 @@
       <option value="-3">-3</option>
       <option value="-2">-2</option>
       <option value="-1">-1</option>
-      <option value="0">0</option>
+      <option value="0" selected>0</option>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -112,7 +112,7 @@
       <option value="-3">-3</option>
       <option value="-2">-2</option>
       <option value="-1">-1</option>
-      <option value="0">0</option>
+      <option value="0" selected>0</option>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
